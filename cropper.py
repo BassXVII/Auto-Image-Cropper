@@ -1,6 +1,17 @@
 # Import Pillow library and Image class, and any other necessary libraries
 import PIL
-from PIL import Image                  
+import base64
+import io
+from PIL import Image     
+
 
 im1 = Image.open("C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\Ifunny.jpg")
 print("The dimensions of the current image are: ", im1.size)
+im1.show()
+
+
+#Encode an image as base64 to be decoded later.
+with open("C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\LSC_1327.JPG", "rb") as image:
+    image_string = base64.b64encode(image.read())
+image = io.BytesIO(base64.b64decode(image_string))
+Image.open(image)
