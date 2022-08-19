@@ -35,9 +35,5 @@ for images in os.listdir(folder_dir):
             cropped_Image = img1.crop((left, upper, right, lower))
             cropped_Image.show()
 
+            cropped_Image.save(folder_dir + images)
 
-#Encode an image as base64 to be decoded later.
-with open("C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\LSC_1327.JPG", "rb") as image:
-    image_string = base64.b64encode(image.read())
-image = io.BytesIO(base64.b64decode(image_string))
-Image.open(image)
