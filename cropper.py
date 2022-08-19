@@ -14,9 +14,12 @@ width, height = im1.size
  
 # Setting the points for cropped image
 left = 0
-top = height
+upper = 0
 right = width
-bottom = 90
+lower = height-20
+
+cropped_Image = im1.crop((left, upper, right, lower))
+cropped_Image.show()
 
 
 #Encode an image as base64 to be decoded later.
