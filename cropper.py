@@ -12,11 +12,19 @@ from os import listdir
 
 #Use below line if you want to manually enter in a set location. 
 set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
-#set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\memes\\"
-
+new_location = "C:\\Users\\sw-adbass\\Desktop\\memes\\"
  
 #User input for save folder locationC:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\
-new_location = "C:\\Users\\sw-adbass\\Desktop\\memes\\"
+
+count = 0
+for images in os.listdir(set_folder):
+	# check if the image ends with png or jpg or jpeg
+	if (images.endswith(".png") or images.endswith(".jpg")\
+		or images.endswith(".jpeg")):
+                  count += 1
+
+print(count)
+
 for images in os.listdir(set_folder):
 
 	# check if the image ends with png or jpg or jpeg
@@ -47,4 +55,9 @@ for images in os.listdir(set_folder):
             #Saves the image in the original save path and overwrites the original. 
             
             cropped_Image.save( new_location + images)
+            
+            
+            print("Files Left ", count)
+            count -= 1
+            
 
