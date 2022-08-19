@@ -9,14 +9,23 @@ import os
 from os import listdir
 
 # get the path or directory
-folder_dir = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures"
+folder_dir = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
 for images in os.listdir(folder_dir):
 
 	# check if the image ends with png or jpg or jpeg
 	if (images.endswith(".png") or images.endswith(".jpg")\
 		or images.endswith(".jpeg")):
-		# display
-		print(images)
+            
+
+            #Needs to read in the entire string into the .open function
+            Full_path = folder_dir + images
+            img1 = Image.open(Full_path)
+            img1.show()
+            print(img1)
+        
+
+        
+
 
 
 #Loop to loop through and crop every image in Pictures folder
