@@ -1,6 +1,6 @@
 # Import Pillow library and Image class, and any other necessary libraries
+from sys import float_repr_style
 import PIL
-import base64
 import io
 from PIL import Image     
 import os
@@ -8,8 +8,16 @@ from os import listdir
 
 #Loop to loop through and crop every image in Pictures folder
 #Get the path or directory
-folder_dir = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
-for images in os.listdir(folder_dir):
+#custom_Path = input("Please specify the location for all of the images: ")
+
+#Use below line if you want to manually enter in a set location. 
+set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
+#set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\memes\\"
+
+ 
+#User input for save folder locationC:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\
+new_location = "C:\\Users\\sw-adbass\\Desktop\\memes\\"
+for images in os.listdir(set_folder):
 
 	# check if the image ends with png or jpg or jpeg
 	if (images.endswith(".png") or images.endswith(".jpg")\
@@ -17,7 +25,7 @@ for images in os.listdir(folder_dir):
             
 
             #Needs to read in the entire string into the .open function
-            Full_path = folder_dir + images
+            Full_path = set_folder + images
             img1 = Image.open(Full_path)
                     
             #Sets width and height for manipulation later
@@ -37,5 +45,6 @@ for images in os.listdir(folder_dir):
             cropped_Image.show()
 
             #Saves the image in the original save path and overwrites the original. 
-            cropped_Image.save(folder_dir + images)
+            
+            cropped_Image.save( new_location + images)
 
