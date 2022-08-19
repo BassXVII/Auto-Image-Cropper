@@ -5,7 +5,16 @@ import io
 from PIL import Image     
 
 
-im1 = Image.open("C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\Ifunny.jpg")
+#Loop to loop through and crop every image in Pictures folder
+folder_path = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
+for i in folder_path:
+    try:
+        img = Image.open(i)
+    except Exception:
+        pass
+
+
+im1 = Image.open("C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\meme2.png")
 print("The dimensions of the current image are: ", im1.size)
 im1.show()
 
@@ -16,7 +25,8 @@ width, height = im1.size
 left = 0
 upper = 0
 right = width
-lower = height-20
+# Currently, height - 25 seems to be about the size of the watermark. 
+lower = height-25
 
 cropped_Image = im1.crop((left, upper, right, lower))
 cropped_Image.show()
