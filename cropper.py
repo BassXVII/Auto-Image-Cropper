@@ -3,8 +3,6 @@ import PIL
 import base64
 import io
 from PIL import Image     
-
-# import the modules
 import os
 from os import listdir
 
@@ -32,8 +30,12 @@ for images in os.listdir(folder_dir):
             # Currently, height - 25 seems to be about the size of the watermark. 
             lower = height-25
 
+            #Crops image with dimensions set above.
             cropped_Image = img1.crop((left, upper, right, lower))
+            
+            #Shows for test purposes. Can comment this out
             cropped_Image.show()
 
+            #Saves the image in the original save path and overwrites the original. 
             cropped_Image.save(folder_dir + images)
 
