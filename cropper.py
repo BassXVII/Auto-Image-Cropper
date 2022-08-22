@@ -11,8 +11,8 @@ from os import listdir
 #custom_Path = input("Please specify the location for all of the images: ")
 
 #Use below line if you want to manually enter in a set location. 
-set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
-new_location = "C:\\Users\\sw-adbass\\Desktop\\memes\\"
+set_folder = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\memes\\"
+new_location = "C:\\Users\\sw-adbass\\Desktop\\CroppedMemes2\\"
  
 #User input for save folder locationC:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\
 
@@ -50,7 +50,7 @@ for images in os.listdir(set_folder):
             cropped_Image = img1.crop((left, upper, right, lower))
             
             #Shows for test purposes. Can comment this out
-            cropped_Image.show()
+            #cropped_Image.show()
 
             #Saves the image in the original save path and overwrites the original. 
             
