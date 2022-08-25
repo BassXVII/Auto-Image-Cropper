@@ -5,16 +5,20 @@ import io
 from PIL import Image     
 import os
 from os import listdir
+#Create a popup window for user input
+#from tkinter import *
 
 #Loop to loop through and crop every image in Pictures folder
 #Get the path or directory
-folder_dir = "C:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\"
+folder_dir = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\"
+Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
+
+
 for images in os.listdir(folder_dir):
 
 	# check if the image ends with png or jpg or jpeg
 	if (images.endswith(".png") or images.endswith(".jpg")\
 		or images.endswith(".jpeg")):
-            
 
             #Needs to read in the entire string into the .open function
             Full_path = folder_dir + images
@@ -34,8 +38,8 @@ for images in os.listdir(folder_dir):
             cropped_Image = img1.crop((left, upper, right, lower))
             
             #Shows for test purposes. Can comment this out
-            cropped_Image.show()
+            #cropped_Image.show()
 
             #Saves the image in the original save path and overwrites the original. 
-            cropped_Image.save(folder_dir + images)
+            cropped_Image.save(Folder_Dest + images)
 
