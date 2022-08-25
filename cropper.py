@@ -1,6 +1,6 @@
 # Import Pillow library and Image class, and any other necessary libraries
+from sys import float_repr_style
 import PIL
-import base64
 import io
 from PIL import Image     
 import os
@@ -10,8 +10,17 @@ from os import listdir
 
 #Loop to loop through and crop every image in Pictures folder
 #Get the path or directory
+
 folder_dir = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\"
 Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
+
+count = 0
+for images in os.listdir(folder_dir):
+	# check if the image ends with png or jpg or jpeg
+	if (images.endswith(".png") or images.endswith(".jpg")\
+		or images.endswith(".jpeg")):
+              count += 1 
+
 
 
 for images in os.listdir(folder_dir):
@@ -19,7 +28,7 @@ for images in os.listdir(folder_dir):
 	# check if the image ends with png or jpg or jpeg
 	if (images.endswith(".png") or images.endswith(".jpg")\
 		or images.endswith(".jpeg")):
-
+            
             #Needs to read in the entire string into the .open function
             Full_path = folder_dir + images
             img1 = Image.open(Full_path)
@@ -40,6 +49,11 @@ for images in os.listdir(folder_dir):
             #Shows for test purposes. Can comment this out
             #cropped_Image.show()
 
-            #Saves the image in the original save path and overwrites the original. 
+            #Saves the image in the original save path and overwrites the original.
             cropped_Image.save(Folder_Dest + images)
+
+            print("Files Left ", count)
+            count -= 1
+            
+
 
