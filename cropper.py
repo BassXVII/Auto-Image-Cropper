@@ -1,4 +1,5 @@
 # Import Pillow library and Image class, and any other necessary libraries
+
 from sys import float_repr_style
 import PIL
 import io
@@ -6,12 +7,26 @@ from PIL import Image
 import os
 from os import listdir
 #Create a popup window for user input
-#from tkinter import *
+import tkinter as tk
+from tkinter import simpledialog
+
 
 #Loop to loop through and crop every image in Pictures folder
 #Get the path or directory
 
-folder_dir = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\"
+
+ROOT = tk.Tk()
+
+ROOT.withdraw()
+# the input dialog
+USER_INP = simpledialog.askstring(title="Source",
+                                  prompt="Enter in folder source:")
+
+# check it out
+print("Hello", USER_INP)
+
+
+folder_dir = USER_INP
 Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
 
 count = 0
@@ -55,5 +70,7 @@ for images in os.listdir(folder_dir):
             print("Files Left ", count)
             count -= 1
             
+
+
 
 
