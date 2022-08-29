@@ -1,5 +1,6 @@
 # Import Pillow library and Image class, and any other necessary libraries
 
+from cgi import test
 from sys import float_repr_style
 import PIL
 import io
@@ -8,26 +9,47 @@ import os
 from os import listdir
 #Create a popup window for user input
 import tkinter as tk
-from tkinter import simpledialog
+from tkinter import *
 
 
 #Loop to loop through and crop every image in Pictures folder
 #Get the path or directory
 
 
-ROOT = tk.Tk()
+#ROOT = tk.Tk()
 
-ROOT.withdraw()
+#ROOT.withdraw()
 # the input dialog
-USER_INP = simpledialog.askstring(title="Source",
-                                  prompt="Enter in folder source:")
-
+#USER_INP = simpledialog.askstring(title="Source",
+#                                 prompt="Enter in folder source:")
 # check it out
-print("Hello", USER_INP)
+#print("Hello", USER_INP)
 
 
-folder_dir = USER_INP
-Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
+
+#Definition for command
+def submit():
+      
+
+root = Tk()
+root.title("Source Dir")
+root.geometry("200x200")
+
+
+
+root.mainloop()
+
+#Loop for multiple inputs
+for x in range(2):
+      my_entry = Entry(root)
+      my_entry.grid(row=0, column=2, pady=20, padx=50)
+
+#Get labels and commands
+my_button = Button(root, text="Enter", command=Enter)
+my_button.grid(row=1, column=0, pady=20)
+
+#folder_dir = USER_INP
+#Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
 
 #count = 0
 #for images in os.listdir(folder_dir):
