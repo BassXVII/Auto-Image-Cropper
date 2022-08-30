@@ -1,8 +1,10 @@
 # Import Pillow library and Image class, and any other necessary libraries
 
+from cProfile import label
 from cgi import test
 from html import entities
 from msilib import _directories
+from operator import ge
 from sys import float_repr_style
 import PIL
 import io
@@ -31,32 +33,46 @@ root = Tk()
 root.title("Source Dir")
 root.geometry("200x200")
 
-#List to store values
-directories = []
 
-#Definition for command
+source_Dir = tk.StringVar()
+dest_Dir = tk.StringVar()
+
+#Function that is getting and storing them as a variable
 def submit():
-      entry_list = ''
-      for entries in directories:
-            entry_list = entry_list + entries.ge + '\n'
-            my_label.config(text= entries + '\n')
+      source = source_Dir.get()
+      dest = dest_Dir.get()
+
+      print("Source: " + source)
+      print("Dest: " + dest)
+
+      source_Dir.set("")
+      dest_Dir.set("")
+
+#Set an entry point and a label for source directory
+source_label = tk.Label(root, text="Source Directory", font=('calibre', 10, 'bold'))
+source_entry = tk.Entry(root,textvariable = source_Dir, font=('calibre',10,'normal'))
+
+#Create an entry point and a label for destination folders
+dest_label = tk.Label(root, text = 'Destination Directory', font = ('calibre',10,'bold'))
+dest_entry=tk.Entry(root, textvariable = dest_Dir, font = ('calibre',10,'normal'))
 
 
+# creating a button using the widget
+# Button that will call the submit function
+sub_btn=tk.Button(root,text = 'Submit', command = submit)
 
-#Loop for multiple inputs
-for x in range(2):
-      my_entry = Entry(root)
-      my_entry.grid(row=0, column=2, pady=20, padx=50)
-      directories.append(my_entry)
-
-#Get labels and commands
-my_button = Button(root, text="Enter", command=submit)
-my_button.grid(row=1, column=0, pady=20)
-
-
-my_label = Label(root, text="hello")
-my_label.grid(row=2, column=0, pady=10)
+source_label.grid(row=0,column=0)
+source_entry.grid(row=0,column=1)
+dest_label.grid(row=1,column=0)
+dest_entry.grid(row=1,column=1)
+sub_btn.grid(row=2,column=1)
+  
+# performing an infinite loop
+# for the window to display
 root.mainloop()
+
+
+
 #folder_dir = USER_INP
 #Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
 
