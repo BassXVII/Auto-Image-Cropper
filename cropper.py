@@ -29,9 +29,9 @@ from tkinter import *
 # check it out
 #print("Hello", USER_INP)
 
-root = Tk()
+root = tk.Tk()
 root.title("Source Dir")
-root.geometry("200x200")
+root.geometry("500x100")
 
 
 source_Dir = tk.StringVar()
@@ -47,7 +47,7 @@ def submit():
 
       source_Dir.set("")
       dest_Dir.set("")
-
+      
 #Set an entry point and a label for source directory
 source_label = tk.Label(root, text="Source Directory", font=('calibre', 10, 'bold'))
 source_entry = tk.Entry(root,textvariable = source_Dir, font=('calibre',10,'normal'))
@@ -56,6 +56,8 @@ source_entry = tk.Entry(root,textvariable = source_Dir, font=('calibre',10,'norm
 dest_label = tk.Label(root, text = 'Destination Directory', font = ('calibre',10,'bold'))
 dest_entry=tk.Entry(root, textvariable = dest_Dir, font = ('calibre',10,'normal'))
 
+#create a quit Button
+exit = Button(root, text="Exit", command=root.destroy)
 
 # creating a button using the widget
 # Button that will call the submit function
@@ -65,10 +67,12 @@ source_label.grid(row=0,column=0)
 source_entry.grid(row=0,column=1)
 dest_label.grid(row=1,column=0)
 dest_entry.grid(row=1,column=1)
-sub_btn.grid(row=2,column=1)
+sub_btn.grid(row=2,column=0)
+exit.grid(row=2, column=1)
   
 # performing an infinite loop
 # for the window to display
+
 root.mainloop()
 
 
