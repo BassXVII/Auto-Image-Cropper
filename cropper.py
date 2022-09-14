@@ -39,6 +39,7 @@ dest_Dir = tk.StringVar()
 
 #Function that is getting and storing them as a variable
 def submit():
+      global source, dest
       source = source_Dir.get()
       dest = dest_Dir.get()
 
@@ -77,8 +78,8 @@ root.mainloop()
 
 
 
-folder_dir = source_entry + "\\"
-Folder_Dest = dest_entry + "\\"
+folder_dir = source + "\\"
+Folder_Dest = dest + "\\"
 
 count = 0
 for images in os.listdir(folder_dir):
