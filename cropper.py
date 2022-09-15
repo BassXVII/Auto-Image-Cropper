@@ -27,7 +27,7 @@ print("Hello", USER_INP)
 
 
 folder_dir = USER_INP
-Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Desktop\\cropped\\"
+Folder_Dest = "C:\\Users\\sw-adbass\\Documents\\resume\\bgRemoved\\"
 
 count = 0
 for images in os.listdir(folder_dir):
