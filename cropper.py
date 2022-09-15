@@ -1,5 +1,7 @@
 # Import Pillow library and Image class, and any other necessary libraries
 
+########################MAIN#####################
+
 from sys import float_repr_style
 import PIL
 import io
