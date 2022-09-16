@@ -2,7 +2,8 @@
 
 
 ####################Tk_Window########################
-
+import tkinter as tk
+from tkinter import *
 from cProfile import label
 from cgi import test
 from html import entities
@@ -15,8 +16,7 @@ from PIL import Image
 import os
 from os import listdir
 #Create a popup window for user input
-import tkinter as tk
-from tkinter import *
+
 
 
 #Loop to loop through and crop every image in Pictures folder
@@ -40,6 +40,7 @@ root.geometry("500x100")
 source_Dir = tk.StringVar()
 dest_Dir = tk.StringVar()
 
+
 #Function that is getting and storing them as a variable
 def submit():
       global source, dest
@@ -61,11 +62,11 @@ dest_label = tk.Label(root, text = 'Destination Directory', font = ('calibre',10
 dest_entry=tk.Entry(root, textvariable = dest_Dir, font = ('calibre',10,'normal'))
 
 #create a quit Button
-exit = Button(root, text="Exit", command=root.destroy)
+exit = tk.Button(root, text="Exit", command=root.destroy)
 
 # creating a button using the widget
 # Button that will call the submit function
-sub_btn=tk.Button(root,text = 'Submit', command = submit)
+sub_btn= tk.Button(root,text = 'Submit', command = submit)
 
 source_label.grid(row=0,column=0)
 source_entry.grid(row=0,column=1)
@@ -82,7 +83,7 @@ root.mainloop()
 
 
 folder_dir = source + "\\"
-Folder_Dest = dest + "\\"
+Folder_Dest = dest
 
 count = 0
 for images in os.listdir(folder_dir):
@@ -118,7 +119,7 @@ for images in os.listdir(folder_dir):
 
 
             #Saves the image in the original save path and overwrites the original.
-#            cropped_Image.save(Folder_Dest + images)
+            cropped_Image.save(Folder_Dest + images)
 #
             print("Files Left ", count)
             count -= 1
