@@ -37,6 +37,7 @@ root.title("Source Dir")
 root.geometry("500x100")
 
 
+<<<<<<< HEAD
 source_Dir = tk.StringVar()
 dest_Dir = tk.StringVar()
 
@@ -84,6 +85,10 @@ root.mainloop()
 
 folder_dir = source + "\\"
 Folder_Dest = dest + "\\"
+=======
+folder_dir = USER_INP
+Folder_Dest = "C:\\Users\\sw-adbass\\Documents\\resume\\bgRemoved\\"
+>>>>>>> main
 
 count = 0
 for images in os.listdir(folder_dir):
