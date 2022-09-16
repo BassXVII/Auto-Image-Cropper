@@ -1,7 +1,8 @@
 # Import Pillow library and Image class, and any other necessary libraries
 
 
-####################Tk_Window########################
+####################Main########################
+
 import tkinter as tk
 from tkinter import *
 from cProfile import label
