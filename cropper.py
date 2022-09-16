@@ -83,7 +83,7 @@ root.mainloop()
 
 
 folder_dir = source + "\\"
-Folder_Dest = dest
+Folder_Dest = dest + "\\"
 
 count = 0
 for images in os.listdir(folder_dir):
