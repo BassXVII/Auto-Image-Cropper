@@ -11,8 +11,8 @@ from os import listdir
 #custom_Path = input("Please specify the location for all of the images: ")
 
 #Use below line if you want to manually enter in a set location. 
-folder_dir = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\"
-Folder_Dest = "C:\\Users\\bassd\\OneDrive\\Pictures\\Saved Pictures\\Cropped"
+folder_dir = "C:\\Users\\Alek\\Pictures\\Uncropped\\"
+Folder_Dest = "C:\\Users\\Alek\\Pictures\\Cropped\\"
  
 #User input for save folder locationC:\\Users\\sw-adbass\\Pictures\\Saved Pictures\\
 
