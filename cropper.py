@@ -12,7 +12,7 @@ from msilib import _directories
 from operator import ge
 from sys import float_repr_style
 import io
-from PIL import Image     
+from PIL import Image  
 import os
 from os import listdir
 #Create a popup window for user input
@@ -64,7 +64,11 @@ def submit():
 
       source_Dir.set("")
       dest_Dir.set("")
-      
+
+
+def drop(event):
+    filepath = event.data
+    print(f'Filepath: {filepath}')
 #Set an entry point and a label for source directory
 source_label = tk.Label(root, text="Source Directory", font=('calibre', 10, 'bold'))
 source_entry = tk.Entry(root,textvariable = source_Dir, font=('calibre',10,'normal'))
