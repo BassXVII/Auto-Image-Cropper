@@ -11,7 +11,6 @@ from html import entities
 from msilib import _directories
 from operator import ge
 from sys import float_repr_style
-import PIL
 import io
 from PIL import Image     
 import os
@@ -33,10 +32,21 @@ from os import listdir
 # check it out
 #print("Hello", USER_INP)
 
+
+
+def center_window(root, width=300, height=200):
+    # get screen width and height
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+
+    # calculate position x and y coordinates
+    x = (screen_width/2) - (width/2)
+    y = (screen_height/2) - (height/2)
+    root.geometry('%dx%d+%d+%d' % (width, height, x, y))
+
 root = tk.Tk()
 root.title("Source Dir")
-root.geometry("500x100")
-
+center_window(root, 800, 600)  # Set width and heightroot.title("Source Dir")
 
 
 source_Dir = tk.StringVar()
